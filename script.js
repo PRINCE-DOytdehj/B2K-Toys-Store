@@ -1,4 +1,9 @@
-// B2K Toys Store
-// JavaScript file
+let cartCount = 0;
 
-console.log("B2K Toys Store is working!");
+function addToCart() {
+
+    cartCount++;
+
+    document.getElementById("cart-count").textContent = cartCount;
+
+}
