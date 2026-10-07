@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,107 +13,177 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- NAVBAR -->
     <nav>
         <div class="logo">🧸 B2K Toys</div>
 
         <div class="nav-links">
-            <a href="#">Home</a>
+            <a href="#home">Home</a>
             <a href="#products">Products</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">🛒 Cart (<span id="cart-count">0</span>)</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#cart">🛒 Cart (<span id="cart-count">0</span>)</a>
         </div>
     </nav>
 
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- HERO -->
+    <section class="hero" id="home">
 
         <h1>Welcome to B2K Toys Store</h1>
 
-        <p>
-            Fun, Safe & Amazing Toys for Everyone!
-        </p>
+        <p>Fun, Safe & Amazing Toys for Everyone!</p>
 
-        <button>Shop Now</button>
+        <button onclick="document.getElementById('products').scrollIntoView()">
+            Shop Now
+        </button>
 
     </section>
 
 
-    <!-- Products Section -->
+    <!-- PRODUCTS -->
     <section id="products">
 
         <h2>Our Toys</h2>
 
-        <div class="products">
+        <div class="search-box">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="🔍 Search toys..."
+                oninput="searchProducts()"
+            >
+        </div>
 
-            <div class="product-card">
+        <div class="products" id="product-list">
+
+            <!-- Remote Car -->
+            <div class="product-card" data-name="remote car">
                 <div class="toy-image">🚗</div>
+
                 <h3>Remote Car</h3>
-                <p>₹499</p>
-                <button onclick="addToCart('Remote Car', 499)">Add to Cart</button>
+
+                <p class="price">₹499</p>
+
+                <button onclick="addToCart('Remote Car', 499)">
+                    Add to Cart
+                </button>
             </div>
 
 
-            <div class="product-card">
+            <!-- Teddy Bear -->
+            <div class="product-card" data-name="teddy bear">
                 <div class="toy-image">🧸</div>
+
                 <h3>Teddy Bear</h3>
-                <p>₹399</p>
-                <button onclick="addToCart('Teddy Bear', 399)">Add to Cart</button>
+
+                <p class="price">₹399</p>
+
+                <button onclick="addToCart('Teddy Bear', 399)">
+                    Add to Cart
+                </button>
             </div>
 
 
-            <div class="product-card">
+            <!-- Robot Toy -->
+            <div class="product-card" data-name="robot toy">
                 <div class="toy-image">🤖</div>
+
                 <h3>Robot Toy</h3>
-                <p>₹699</p>
-                <button onclick="addToCart('Robot Toy', 699)">Add to Cart</button>
+
+                <p class="price">₹699</p>
+
+                <button onclick="addToCart('Robot Toy', 699)">
+                    Add to Cart
+                </button>
             </div>
 
 
-            <div class="product-card">
+            <!-- Game Controller -->
+            <div class="product-card" data-name="game controller">
                 <div class="toy-image">🎮</div>
+
                 <h3>Game Controller</h3>
-                <p>₹899</p>
-                <button onclick="addToCart('Game Controller', 899)">Add to Cart</button>
+
+                <p class="price">₹899</p>
+
+                <button onclick="addToCart('Game Controller', 899)">
+                    Add to Cart
+                </button>
             </div>
+
+        </div>
+
+        <p id="no-products" class="no-products">
+            No products found.
+        </p>
+
+    </section>
+
+
+    <!-- CART -->
+    <section id="cart">
+
+        <h2>🛒 Your Cart</h2>
+
+        <div id="cart-items">
+            <p class="empty-cart">Your cart is empty.</p>
+        </div>
+
+        <div class="cart-total">
+
+            <h3>
+                Total: ₹<span id="cart-total">0</span>
+            </h3>
+
+            <button onclick="checkout()">
+                Checkout
+            </button>
 
         </div>
 
     </section>
 
-   <!-- Cart Section -->
 
-<section id="cart">
+    <!-- ABOUT -->
+    <section id="about" class="info-section">
 
-    <h2>🛒 Your Cart</h2>
+        <h2>About B2K Toys</h2>
 
-    <div id="cart-items">
+        <p>
+            B2K Toys Store is a dummy e-commerce website created
+            for learning and educational purposes. We offer fun
+            and exciting toys for everyone.
+        </p>
 
-        <p>Your cart is empty.</p>
+    </section>
 
-    </div>
 
-    <div class="cart-total">
+    <!-- CONTACT -->
+    <section id="contact" class="info-section">
 
-        <h3>Total: ₹<span id="cart-total">0</span></h3>
+        <h2>Contact Us</h2>
 
-        <button>Checkout</button>
+        <p>Email: b2ktoys@example.com</p>
 
-    </div>
+        <p>Phone: +91 98765 43210</p>
 
-</section>
-    
-    <!-- Footer -->
+    </section>
+
+
+    <!-- FOOTER -->
     <footer>
 
-        <p>© 2026 B2K Toys Store. All Rights Reserved.</p>
+        <p>
+            © 2026 B2K Toys Store. All Rights Reserved.
+        </p>
 
     </footer>
 
-<script src="script.js"></script>
-    
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
+```
