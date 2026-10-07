@@ -241,3 +241,61 @@ footer {
 .cart-total h3 {
     font-size: 24px;
 }
+/* =========================
+   CART ITEMS
+========================= */
+
+.cart-item {
+    background-color: white;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item h3 {
+    margin-bottom: 8px;
+}
+
+.cart-item p {
+    margin: 5px 0;
+}
+
+
+/* QUANTITY BUTTONS */
+
+.quantity-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.quantity-buttons button {
+    padding: 6px 12px;
+
+    font-size: 18px;
+
+    border-radius: 5px;
+}
+
+.quantity-buttons span {
+    font-size: 18px;
+
+    font-weight: bold;
+
+    min-width: 25px;
+
+    text-align: center;
+}
