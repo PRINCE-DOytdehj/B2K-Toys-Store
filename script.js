@@ -67,14 +67,15 @@ function displayCart() {
 
                 <div class="quantity-buttons">
 
-                    <button onclick="decreaseQuantity(${index})">−</button>
+    <button onclick="decreaseQuantity(${index})">−</button>
 
-                    <span>${product.quantity}</span>
+    <span>${product.quantity}</span>
 
-                    <button onclick="increaseQuantity(${index})">+</button>
+    <button onclick="increaseQuantity(${index})">+</button>
 
-                </div>
+    <button onclick="removeFromCart(${index})">🗑️ Remove</button>
 
+  </div>
             </div>
         `;
 
