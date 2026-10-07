@@ -16,7 +16,6 @@ function addToCart(productName, productPrice) {
     displayCart();
 }
 
-
 function displayCart() {
 
     let cartItems = document.getElementById("cart-items");
