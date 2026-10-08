@@ -5,12 +5,17 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Products | B2K Toys</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -18,9 +23,7 @@
 <body>
 
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
+    <!-- NAVBAR -->
 
     <nav>
 
@@ -37,6 +40,10 @@
 
             <a href="products.html">
                 Products
+            </a>
+
+            <a href="index.html#categories">
+                Categories
             </a>
 
             <a href="index.html#about">
@@ -58,9 +65,7 @@
 
 
 
-    <!-- =========================
-         PRODUCTS HEADER
-    ========================== -->
+    <!-- PRODUCTS HEADER -->
 
     <section class="products-header">
 
@@ -73,16 +78,14 @@
         </h1>
 
         <p>
-            Find exciting toys for every age.
+            Find exciting toys for everyone.
         </p>
 
     </section>
 
 
 
-    <!-- =========================
-         SEARCH
-    ========================== -->
+    <!-- SEARCH + FILTER -->
 
     <section class="product-controls">
 
@@ -99,7 +102,10 @@
             <button
                 class="filter-btn active"
                 data-category="all"
-                onclick="filterCategory('all', this)"
+                onclick="filterCategory(
+                    'all',
+                    this
+                )"
             >
                 All
             </button>
@@ -108,7 +114,10 @@
             <button
                 class="filter-btn"
                 data-category="cars"
-                onclick="filterCategory('cars', this)"
+                onclick="filterCategory(
+                    'cars',
+                    this
+                )"
             >
                 RC Cars
             </button>
@@ -117,7 +126,10 @@
             <button
                 class="filter-btn"
                 data-category="robots"
-                onclick="filterCategory('robots', this)"
+                onclick="filterCategory(
+                    'robots',
+                    this
+                )"
             >
                 Robots
             </button>
@@ -126,7 +138,10 @@
             <button
                 class="filter-btn"
                 data-category="plush"
-                onclick="filterCategory('plush', this)"
+                onclick="filterCategory(
+                    'plush',
+                    this
+                )"
             >
                 Plush
             </button>
@@ -135,7 +150,10 @@
             <button
                 class="filter-btn"
                 data-category="gaming"
-                onclick="filterCategory('gaming', this)"
+                onclick="filterCategory(
+                    'gaming',
+                    this
+                )"
             >
                 Gaming
             </button>
@@ -146,20 +164,14 @@
 
 
 
-    <!-- =========================
-         PRODUCTS
-    ========================== -->
+    <!-- PRODUCTS -->
 
     <section class="products-section">
-
 
         <div class="products-grid">
 
 
-
-            <!-- PRODUCT 1
-                 RC CAR
-            -->
+            <!-- CAR 1 -->
 
             <div
                 class="product-card"
@@ -172,7 +184,6 @@
                     <img
                         src="https://images.pexels.com/photos/13047786/pexels-photo-13047786.jpeg?auto=compress&cs=tinysrgb&w=900"
                         alt="Speed Racer RC Car"
-                        loading="lazy"
                     >
 
                 </div>
@@ -180,18 +191,19 @@
 
                 <div class="product-info">
 
-                    <p class="product-category">
+                    <small>
                         RC CARS
-                    </p>
+                    </small>
 
                     <h3>
                         Speed Racer RC Car
                     </h3>
 
-                    <p class="product-description">
-                        Fast and exciting remote
-                        control racing car.
+                    <p>
+                        Fast remote-control racing car
+                        for exciting play.
                     </p>
+
 
                     <div class="product-bottom">
 
@@ -216,9 +228,7 @@
 
 
 
-            <!-- PRODUCT 2
-                 RC CAR
-            -->
+            <!-- CAR 2 -->
 
             <div
                 class="product-card"
@@ -231,7 +241,6 @@
                     <img
                         src="https://images.pexels.com/photos/9227215/pexels-photo-9227215.jpeg?auto=compress&cs=tinysrgb&w=900"
                         alt="Monster Truck RC"
-                        loading="lazy"
                     >
 
                 </div>
@@ -239,18 +248,19 @@
 
                 <div class="product-info">
 
-                    <p class="product-category">
+                    <small>
                         RC CARS
-                    </p>
+                    </small>
 
                     <h3>
                         Monster Truck RC
                     </h3>
 
-                    <p class="product-description">
+                    <p>
                         Powerful monster truck
-                        designed for off-road fun.
+                        for off-road fun.
                     </p>
+
 
                     <div class="product-bottom">
 
@@ -275,9 +285,7 @@
 
 
 
-            <!-- PRODUCT 3
-                 RC CAR
-            -->
+            <!-- CAR 3 -->
 
             <div
                 class="product-card"
@@ -290,7 +298,6 @@
                     <img
                         src="https://images.pexels.com/photos/5190162/pexels-photo-5190162.jpeg?auto=compress&cs=tinysrgb&w=900"
                         alt="Off Road RC Car"
-                        loading="lazy"
                     >
 
                 </div>
@@ -298,18 +305,19 @@
 
                 <div class="product-info">
 
-                    <p class="product-category">
+                    <small>
                         RC CARS
-                    </p>
+                    </small>
 
                     <h3>
                         Off-Road RC Car
                     </h3>
 
-                    <p class="product-description">
-                        Rugged remote-control car
+                    <p>
+                        Rugged RC car designed
                         for adventurous play.
                     </p>
+
 
                     <div class="product-bottom">
 
@@ -334,9 +342,7 @@
 
 
 
-            <!-- PRODUCT 4
-                 ROBOT
-            -->
+            <!-- ROBOT 1 -->
 
             <div
                 class="product-card"
@@ -349,7 +355,6 @@
                     <img
                         src="https://images.pexels.com/photos/8566462/pexels-photo-8566462.jpeg?auto=compress&cs=tinysrgb&w=900"
                         alt="Smart Robot Toy"
-                        loading="lazy"
                     >
 
                 </div>
@@ -357,18 +362,19 @@
 
                 <div class="product-info">
 
-                    <p class="product-category">
+                    <small>
                         ROBOTS
-                    </p>
+                    </small>
 
                     <h3>
                         Smart Robot Toy
                     </h3>
 
-                    <p class="product-description">
+                    <p>
                         Interactive robot toy
                         for fun and learning.
                     </p>
+
 
                     <div class="product-bottom">
 
@@ -393,9 +399,7 @@
 
 
 
-            <!-- PRODUCT 5
-                 ROBOT
-            -->
+            <!-- ROBOT 2 -->
 
             <div
                 class="product-card"
@@ -408,7 +412,6 @@
                     <img
                         src="https://images.pexels.com/photos/8294567/pexels-photo-8294567.jpeg?auto=compress&cs=tinysrgb&w=900"
                         alt="Advanced Robot Toy"
-                        loading="lazy"
                     >
 
                 </div>
@@ -416,18 +419,19 @@
 
                 <div class="product-info">
 
-                    <p class="product-category">
+                    <small>
                         ROBOTS
-                    </p>
+                    </small>
 
                     <h3>
                         Advanced Robot Toy
                     </h3>
 
-                    <p class="product-description">
-                        Fun robotic toy with
-                        modern interactive design.
+                    <p>
+                        Modern interactive robot
+                        toy for kids.
                     </p>
+
 
                     <div class="product-bottom">
 
@@ -452,9 +456,7 @@
 
 
 
-            <!-- PRODUCT 6
-                 PLUSH
-            -->
+            <!-- TEDDY 1 -->
 
             <div
                 class="product-card"
@@ -467,7 +469,6 @@
                     <img
                         src="https://images.pexels.com/photos/5802595/pexels-photo-5802595.jpeg?auto=compress&cs=tinysrgb&w=900"
                         alt="Classic Teddy Bear"
-                        loading="lazy"
                     >
 
                 </div>
@@ -475,18 +476,19 @@
 
                 <div class="product-info">
 
-                    <p class="product-category">
+                    <small>
                         PLUSH
-                    </p>
+                    </small>
 
                     <h3>
                         Classic Teddy Bear
                     </h3>
 
-                    <p class="product-description">
+                    <p>
                         Soft and comfortable
-                        teddy bear for kids.
+                        teddy bear.
                     </p>
+
 
                     <div class="product-bottom">
 
@@ -511,9 +513,7 @@
 
 
 
-            <!-- PRODUCT 7
-                 PLUSH
-            -->
+            <!-- TEDDY 2 -->
 
             <div
                 class="product-card"
@@ -526,7 +526,6 @@
                     <img
                         src="https://images.pexels.com/photos/708774/pexels-photo-708774.jpeg?auto=compress&cs=tinysrgb&w=900"
                         alt="Premium Teddy Bear"
-                        loading="lazy"
                     >
 
                 </div>
@@ -534,18 +533,19 @@
 
                 <div class="product-info">
 
-                    <p class="product-category">
+                    <small>
                         PLUSH
-                    </p>
+                    </small>
 
                     <h3>
                         Premium Teddy Bear
                     </h3>
 
-                    <p class="product-description">
+                    <p>
                         Soft premium plush toy
                         with a classic design.
                     </p>
+
 
                     <div class="product-bottom">
 
@@ -570,9 +570,7 @@
 
 
 
-            <!-- PRODUCT 8
-                 GAMING
-            -->
+            <!-- GAMING -->
 
             <div
                 class="product-card"
@@ -591,18 +589,19 @@
 
                 <div class="product-info">
 
-                    <p class="product-category">
+                    <small>
                         GAMING
-                    </p>
+                    </small>
 
                     <h3>
                         Gaming Controller
                     </h3>
 
-                    <p class="product-description">
-                        Comfortable controller
-                        for an exciting gaming experience.
+                    <p>
+                        Comfortable gaming
+                        controller.
                     </p>
+
 
                     <div class="product-bottom">
 
@@ -632,18 +631,19 @@
 
 
 
-    <!-- =========================
-         CART
-    ========================== -->
+    <!-- CART -->
 
-    <section id="cart" class="cart-section">
+    <section
+        id="cart"
+        class="cart-section"
+    >
 
         <div class="cart-container">
 
-            <div class="cart-heading">
+            <div class="section-heading">
 
                 <p>
-                    YOUR SHOPPING BAG
+                    YOUR CART
                 </p>
 
                 <h2>
@@ -685,9 +685,7 @@
 
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+    <!-- FOOTER -->
 
     <footer>
 
@@ -725,8 +723,6 @@
     </footer>
 
 
-
-    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
