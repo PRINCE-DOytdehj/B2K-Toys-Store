@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2K Toys | Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <a href="index.html">B2K <span>TOYS</span></a>
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="track-order.html">Track Order</a>
+
+        <a href="cart.html" class="cart-link">
+            Cart <span id="cart-count">0</span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="page-banner">
+
+        <p>GET IN TOUCH</p>
+
+        <h1>Contact Us</h1>
+
+        <span>
+            We're here to help.
+        </span>
+
+    </section>
+
+
+    <section class="form-section">
+
+        <div class="contact-grid">
+
+            <div>
+
+                <div class="contact-card">
+
+                    <h3>Email</h3>
+
+                    <p>
+                        support@b2ktoys.com
+                    </p>
+
+                </div>
+
+
+                <br>
+
+
+                <div class="contact-card">
+
+                    <h3>Phone</h3>
+
+                    <p>
+                        +91 98765 43210
+                    </p>
+
+                </div>
+
+
+                <br>
+
+
+                <div class="contact-card">
+
+                    <h3>Location</h3>
+
+                    <p>
+                        India
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-container">
+
+                <h2>Send a Message</h2>
+
+                <br>
+
+                <form onsubmit="submitContact(event)">
+
+                    <div class="form-group">
+
+                        <label>
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            required
+                            placeholder="Enter your name">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            required
+                            placeholder="Enter your email">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Message
+                        </label>
+
+                        <textarea
+                            required
+                            placeholder="Write your message"></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="form-submit">
+
+                        SEND MESSAGE
+
+                    </button>
+
+                </form>
+
+
+                <p
+                    id="contact-message"
+                    style="
+                    display:none;
+                    margin-top:20px;
+                    font-weight:bold;
+                    ">
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h2>B2K TOYS</h2>
+            <p>Fun starts here.</p>
+        </div>
+
+        <div>
+            <h3>Shop</h3>
+            <a href="products.html">Products</a>
+            <a href="categories.html">Categories</a>
+            <a href="cart.html">Cart</a>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <a href="track-order.html">Track Order</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 B2K Toys Store. Demo E-Commerce Website.</p>
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
