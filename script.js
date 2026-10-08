@@ -1,18 +1,20 @@
-```javascript
-/* =========================
-   B2K TOYS STORE
-   CART SYSTEM
-========================= */
+// ========================================
+// B2K TOYS - CART SYSTEM
+// ========================================
 
 
-/* LOAD CART FROM LOCAL STORAGE */
+// Load cart from browser storage
 
-let cart = JSON.parse(localStorage.getItem("b2kCart")) || [];
+let cart =
+    JSON.parse(
+        localStorage.getItem("b2kCart")
+    ) || [];
 
 
-/* =========================
-   SAVE CART
-========================= */
+
+// ========================================
+// SAVE CART
+// ========================================
 
 function saveCart() {
 
@@ -20,27 +22,35 @@ function saveCart() {
         "b2kCart",
         JSON.stringify(cart)
     );
+
 }
 
 
-/* =========================
-   ADD TO CART
-========================= */
 
-function addToCart(productName, productPrice) {
+// ========================================
+// ADD PRODUCT TO CART
+// ========================================
 
-    let existingProduct = cart.find(function(product) {
+function addToCart(
+    productName,
+    productPrice
+) {
 
-        return product.name === productName;
+    let existingProduct =
+        cart.find(function(product) {
 
-    });
+            return product.name === productName;
+
+        });
 
 
     if (existingProduct) {
 
         existingProduct.quantity++;
 
-    } else {
+    }
+
+    else {
 
         cart.push({
 
@@ -60,135 +70,227 @@ function addToCart(productName, productPrice) {
     updateCartCount();
 
     displayCart();
+
+
+    alert(
+        productName +
+        " added to cart!"
+    );
+
 }
 
 
-/* =========================
-   CART COUNT
-========================= */
+
+// ========================================
+// UPDATE CART COUNT
+// ========================================
 
 function updateCartCount() {
+
+    let cartCount =
+        document.getElementById(
+            "cart-count"
+        );
+
+
+    if (!cartCount) {
+
+        return;
+
+    }
+
 
     let totalQuantity = 0;
 
 
     cart.forEach(function(product) {
 
-        totalQuantity += product.quantity;
+        totalQuantity +=
+            product.quantity;
 
     });
 
 
-    document.getElementById("cart-count").textContent =
+    cartCount.textContent =
         totalQuantity;
+
 }
 
 
-/* =========================
-   DISPLAY CART
-========================= */
+
+// ========================================
+// DISPLAY CART
+// ========================================
 
 function displayCart() {
 
     let cartItems =
-        document.getElementById("cart-items");
+        document.getElementById(
+            "cart-items"
+        );
+
+
+    let cartTotal =
+        document.getElementById(
+            "cart-total"
+        );
+
+
+    // This prevents errors on homepage
+
+    if (
+        !cartItems ||
+        !cartTotal
+    ) {
+
+        return;
+
+    }
 
 
     cartItems.innerHTML = "";
 
 
+    // Empty cart
+
     if (cart.length === 0) {
 
-        cartItems.innerHTML =
-            '<p class="empty-cart">Your cart is empty.</p>';
+        cartItems.innerHTML = `
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+        `;
 
-        document.getElementById("cart-total").textContent = "0";
+
+        cartTotal.textContent = "0";
+
 
         return;
+
     }
 
 
     let total = 0;
 
 
-    cart.forEach(function(product, index) {
 
-        let subtotal =
-            product.price * product.quantity;
+    // Display every product
 
-
-        total += subtotal;
+    cart.forEach(
+        function(product, index) {
 
 
-        let item =
-            document.createElement("div");
+            let subtotal =
+                product.price *
+                product.quantity;
 
 
-        item.className = "cart-item";
+            total += subtotal;
 
 
-        item.innerHTML = `
-
-            <div>
-
-                <h3>${product.name}</h3>
-
-                <p>
-                    Price: ₹${product.price}
-                </p>
-
-                <p>
-                    Subtotal: ₹${subtotal}
-                </p>
-
-            </div>
+            let cartItem =
+                document.createElement(
+                    "div"
+                );
 
 
-            <div class="quantity-buttons">
-
-                <button
-                    onclick="decreaseQuantity(${index})">
-                    −
-                </button>
+            cartItem.className =
+                "cart-item";
 
 
-                <span>
-                    ${product.quantity}
-                </span>
+            cartItem.innerHTML = `
+
+                <div class="cart-product-info">
+
+                    <h3>
+                        ${product.name}
+                    </h3>
+
+                    <p>
+                        Price:
+                        ₹${product.price}
+                    </p>
+
+                    <p>
+                        Subtotal:
+                        ₹${subtotal}
+                    </p>
+
+                </div>
 
 
-                <button
-                    onclick="increaseQuantity(${index})">
-                    +
-                </button>
+                <div class="quantity-buttons">
+
+                    <button
+                        onclick="
+                            decreaseQuantity(
+                                ${index}
+                            )
+                        "
+                    >
+                        −
+                    </button>
 
 
-                <button
-                    class="remove-button"
-                    onclick="removeFromCart(${index})">
-                    🗑️ Remove
-                </button>
-
-            </div>
-
-        `;
+                    <span>
+                        ${product.quantity}
+                    </span>
 
 
-        cartItems.appendChild(item);
+                    <button
+                        onclick="
+                            increaseQuantity(
+                                ${index}
+                            )
+                        "
+                    >
+                        +
+                    </button>
 
-    });
+
+                    <button
+                        class="remove-button"
+                        onclick="
+                            removeFromCart(
+                                ${index}
+                            )
+                        "
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+            `;
 
 
-    document.getElementById("cart-total").textContent =
+            cartItems.appendChild(
+                cartItem
+            );
+
+        }
+    );
+
+
+    cartTotal.textContent =
         total;
+
 }
 
 
-/* =========================
-   INCREASE QUANTITY
-========================= */
+
+// ========================================
+// INCREASE QUANTITY
+// ========================================
 
 function increaseQuantity(index) {
+
+    if (!cart[index]) {
+
+        return;
+
+    }
+
 
     cart[index].quantity++;
 
@@ -198,22 +300,38 @@ function increaseQuantity(index) {
     updateCartCount();
 
     displayCart();
+
 }
 
 
-/* =========================
-   DECREASE QUANTITY
-========================= */
+
+// ========================================
+// DECREASE QUANTITY
+// ========================================
 
 function decreaseQuantity(index) {
 
-    if (cart[index].quantity > 1) {
+    if (!cart[index]) {
+
+        return;
+
+    }
+
+
+    if (
+        cart[index].quantity > 1
+    ) {
 
         cart[index].quantity--;
 
-    } else {
+    }
 
-        cart.splice(index, 1);
+    else {
+
+        cart.splice(
+            index,
+            1
+        );
 
     }
 
@@ -223,16 +341,28 @@ function decreaseQuantity(index) {
     updateCartCount();
 
     displayCart();
+
 }
 
 
-/* =========================
-   REMOVE PRODUCT
-========================= */
+
+// ========================================
+// REMOVE PRODUCT
+// ========================================
 
 function removeFromCart(index) {
 
-    cart.splice(index, 1);
+    if (!cart[index]) {
+
+        return;
+
+    }
+
+
+    cart.splice(
+        index,
+        1
+    );
 
 
     saveCart();
@@ -240,95 +370,243 @@ function removeFromCart(index) {
     updateCartCount();
 
     displayCart();
+
 }
 
 
-/* =========================
-   SEARCH PRODUCTS
-========================= */
+
+// ========================================
+// SEARCH PRODUCTS
+// ========================================
 
 function searchProducts() {
 
     let searchInput =
-        document.getElementById("search-input")
-        .value
+        document.getElementById(
+            "search"
+        );
+
+
+    if (!searchInput) {
+
+        return;
+
+    }
+
+
+    let searchValue =
+        searchInput.value
         .toLowerCase()
         .trim();
 
 
     let products =
-        document.querySelectorAll(".product-card");
+        document.querySelectorAll(
+            ".product-card"
+        );
 
 
-    let foundProducts = 0;
+    products.forEach(
+        function(product) {
 
 
-    products.forEach(function(product) {
-
-        let productName =
-            product
-            .getAttribute("data-name")
-            .toLowerCase();
+            let productName =
+                product.dataset.name
+                .toLowerCase();
 
 
-        if (productName.includes(searchInput)) {
+            if (
+                productName.includes(
+                    searchValue
+                )
+            ) {
 
-            product.style.display = "";
+                product.style.display =
+                    "";
 
-            foundProducts++;
+            }
 
-        } else {
+            else {
 
-            product.style.display = "none";
+                product.style.display =
+                    "none";
+
+            }
 
         }
+    );
 
-    });
-
-
-    let noProducts =
-        document.getElementById("no-products");
-
-
-    if (foundProducts === 0) {
-
-        noProducts.style.display = "block";
-
-    } else {
-
-        noProducts.style.display = "none";
-
-    }
 }
 
 
-/* =========================
-   CHECKOUT
-========================= */
+
+// ========================================
+// CATEGORY FILTER
+// ========================================
+
+function filterCategory(
+    category,
+    clickedButton
+) {
+
+
+    let products =
+        document.querySelectorAll(
+            ".product-card"
+        );
+
+
+    let buttons =
+        document.querySelectorAll(
+            ".filter-btn"
+        );
+
+
+    // Remove active from all buttons
+
+    buttons.forEach(
+        function(button) {
+
+            button.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    // Add active to clicked button
+
+    if (clickedButton) {
+
+        clickedButton.classList.add(
+            "active"
+        );
+
+    }
+
+
+    // Show/hide products
+
+    products.forEach(
+        function(product) {
+
+
+            let productCategory =
+                product.dataset.category;
+
+
+            if (
+                category === "all" ||
+                productCategory === category
+            ) {
+
+                product.style.display =
+                    "";
+
+            }
+
+            else {
+
+                product.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+}
+
+
+
+// ========================================
+// LOAD CATEGORY FROM HOMEPAGE
+// ========================================
+
+function loadCategoryFromURL() {
+
+
+    let params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    let category =
+        params.get(
+            "category"
+        );
+
+
+    if (!category) {
+
+        return;
+
+    }
+
+
+    let button =
+        document.querySelector(
+            '.filter-btn[data-category="' +
+            category +
+            '"]'
+        );
+
+
+    filterCategory(
+        category,
+        button
+    );
+
+}
+
+
+
+// ========================================
+// CHECKOUT
+// ========================================
 
 function checkout() {
 
+
     if (cart.length === 0) {
 
-        alert("Your cart is empty!");
+        alert(
+            "Your cart is empty!"
+        );
+
 
         return;
+
     }
 
 
     let total =
-        cart.reduce(function(sum, product) {
+        cart.reduce(
+            function(
+                sum,
+                product
+            ) {
 
-            return sum +
-                (product.price * product.quantity);
+                return sum +
+                    (
+                        product.price *
+                        product.quantity
+                    );
 
-        }, 0);
+            },
+            0
+        );
 
 
     alert(
         "Order placed successfully!\n\n" +
-        "Total Amount: ₹" + total +
-        "\n\nThank you for shopping at B2K Toys Store!"
+        "Total Amount: ₹" +
+        total +
+        "\n\n" +
+        "Thank you for shopping at " +
+        "B2K Toys Store!"
     );
 
 
@@ -340,14 +618,24 @@ function checkout() {
     updateCartCount();
 
     displayCart();
+
 }
 
 
-/* =========================
-   INITIALIZE WEBSITE
-========================= */
 
-updateCartCount();
+// ========================================
+// PAGE LOAD
+// ========================================
 
-displayCart();
-```
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        updateCartCount();
+
+        displayCart();
+
+        loadCategoryFromURL();
+
+    }
+);
