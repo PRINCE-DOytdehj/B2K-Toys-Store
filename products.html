@@ -3,170 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2K Toys | Products</title>
+    <title>Products | B2K Toys</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="navbar">
-    <div class="logo">
-        <a href="index.html">B2K <span>TOYS</span></a>
-    </div>
+    <a href="index.html" class="logo">B2K <span>TOYS</span></a>
 
-    <nav class="nav-links">
+    <nav>
         <a href="index.html">Home</a>
-        <a href="categories.html">Categories</a>
-        <a href="products.html" class="active">Products</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="track-order.html">Track Order</a>
-        <a href="cart.html" class="cart-link">
-            Cart <span id="cart-count">0</span>
-        </a>
+        <a href="index.html#categories">Categories</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#deals">Deals</a>
+        <a href="index.html#contact">Contact</a>
     </nav>
+
+    <a href="#cart" class="cart-link">
+        🛒 Cart <span id="cart-count">0</span>
+    </a>
 </header>
 
+<section class="products-header">
+    <p class="section-label">B2K COLLECTION</p>
+    <h1>Explore Our Products</h1>
+    <p>Find toys made for fun, creativity and adventure.</p>
+</section>
 
-<main>
+<section class="products-section">
 
-    <section class="page-banner">
-        <p>SHOP B2K</p>
-        <h1>Explore Our Products</h1>
-        <span>Find something exciting for every age.</span>
-    </section>
+    <div class="product-controls">
 
-
-    <section class="products-section">
-
-        <div class="product-controls">
-
-            <input
-                type="text"
-                id="search"
-                placeholder="Search toys, robots, cars..."
-                onkeyup="applyProductFilters()"
-            >
-
-            <select id="age-filter" onchange="applyProductFilters()">
-                <option value="all">All Ages</option>
-                <option value="0-3">0–3 Years</option>
-                <option value="3-7">3–7 Years</option>
-                <option value="5-7">5–7 Years</option>
-                <option value="5-9">5–9 Years</option>
-                <option value="7-9">7–9 Years</option>
-                <option value="7-12">7–12 Years</option>
-                <option value="8-12">8–12 Years</option>
-            </select>
-
-        </div>
-
+        <input
+            type="text"
+            id="search"
+            placeholder="Search toys..."
+            onkeyup="searchProducts()"
+        >
 
         <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all"
+                onclick="filterCategory('all', this)">All</button>
 
-            <button class="filter-btn active"
-                    data-category="all"
-                    onclick="filterCategory('all', this)">
-                All
-            </button>
+            <button class="filter-btn" data-category="cars"
+                onclick="filterCategory('cars', this)">Cars</button>
 
-            <button class="filter-btn"
-                    data-category="cars"
-                    onclick="filterCategory('cars', this)">
-                RC Cars
-            </button>
+            <button class="filter-btn" data-category="robots"
+                onclick="filterCategory('robots', this)">Robots</button>
 
-            <button class="filter-btn"
-                    data-category="robots"
-                    onclick="filterCategory('robots', this)">
-                Robots
-            </button>
+            <button class="filter-btn" data-category="plush"
+                onclick="filterCategory('plush', this)">Plush</button>
 
-            <button class="filter-btn"
-                    data-category="plush"
-                    onclick="filterCategory('plush', this)">
-                Soft Toys
-            </button>
+            <button class="filter-btn" data-category="gaming"
+                onclick="filterCategory('gaming', this)">Gaming</button>
 
-            <button class="filter-btn"
-                    data-category="gaming"
-                    onclick="filterCategory('gaming', this)">
-                Gaming
-            </button>
+            <button class="filter-btn" data-category="blocks"
+                onclick="filterCategory('blocks', this)">Blocks</button>
 
-            <button class="filter-btn"
-                    data-category="building"
-                    onclick="filterCategory('building', this)">
-                Building
-            </button>
+            <button class="filter-btn" data-category="dinosaur"
+                onclick="filterCategory('dinosaur', this)">Dinosaur</button>
 
-            <button class="filter-btn"
-                    data-category="learning"
-                    onclick="filterCategory('learning', this)">
-                Learning
-            </button>
+            <button class="filter-btn" data-category="educational"
+                onclick="filterCategory('educational', this)">Educational</button>
 
-            <button class="filter-btn"
-                    data-category="dolls"
-                    onclick="filterCategory('dolls', this)">
-                Dolls
-            </button>
-
-            <button class="filter-btn"
-                    data-category="sports"
-                    onclick="filterCategory('sports', this)">
-                Sports
-            </button>
-
+            <button class="filter-btn" data-category="outdoor"
+                onclick="filterCategory('outdoor', this)">Outdoor</button>
         </div>
 
-
-        <div id="products-grid" class="products-grid">
-
-            <!-- PRODUCTS WILL BE CREATED BY JAVASCRIPT -->
-
-        </div>
-
-        <div id="no-products" class="no-products">
-            <h2>No products found</h2>
-            <p>Try another search or category.</p>
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer class="footer">
-
-    <div class="footer-grid">
-
-        <div>
-            <h2>B2K TOYS</h2>
-            <p>Fun starts here.</p>
-        </div>
-
-        <div>
-            <h3>Shop</h3>
-            <a href="products.html">All Products</a>
-            <a href="categories.html">Categories</a>
-            <a href="cart.html">Cart</a>
-        </div>
-
-        <div>
-            <h3>Help</h3>
-            <a href="contact.html">Contact</a>
-            <a href="track-order.html">Track Order</a>
-        </div>
+        <select id="sort-products" onchange="sortProducts()">
+            <option value="default">Sort Products</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="name">Name: A to Z</option>
+        </select>
 
     </div>
 
-    <div class="footer-bottom">
-        <p>© 2026 B2K Toys Store. Demo E-Commerce Website.</p>
+    <div class="products-grid" id="products-grid">
+
+        <div class="product-card"
+             data-name="Speed Racer RC Car"
+             data-category="cars"
+             data-price="599">
+
+            <div class="product-image">
+                <span class="product-badge">BEST SELLER</span>
+                <img src="https://images.pexels.com/photos/13047786/pexels-photo-13047786.jpeg"
+                     alt="Speed Racer RC Car">
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">REMOTE CONTROL</p>
+                <h3>Speed Racer RC Car</h3>
+                <p class="rating">★★★★★ 4.7</p>
+                <p class="price"><del>₹999</del> ₹599</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Speed Racer RC Car',599)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Speed Racer RC Car'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Monster Truck RC"
+             data-category="cars"
+             data-price="799">
+
+            <div class="product-image">
+                <img src="https://images.pexels.com/photos/9227215/pexels-photo-9227215.jpeg"
+                     alt="Monster Truck RC">
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">REMOTE CONTROL</p>
+                <h3>Monster Truck RC</h3>
+                <p class="rating">★★★★★ 4.6</p>
+                <p class="price"><del>₹1,199</del> ₹799</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Monster Truck RC',799)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Monster Truck RC'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Off-Road RC Car"
+             data-category="cars"
+             data-price="899">
+
+            <div class="product-image">
+                <img src="https://images.pexels.com/photos/5190162/pexels-photo-5190162.jpeg"
+                     alt="Off Road RC Car">
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">REMOTE CONTROL</p>
+                <h3>Off-Road RC Car</h3>
+                <p class="rating">★★★★★ 4.5</p>
+                <p class="price"><del>₹1,399</del> ₹899</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Off-Road RC Car',899)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Off-Road RC Car'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Smart Robot Toy"
+             data-category="robots"
+             data-price="699">
+
+            <div class="product-image">
+                <img src="https://images.pexels.com/photos/8566462/pexels-photo-8566462.jpeg"
+                     alt="Smart Robot Toy">
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">ROBOT TOYS</p>
+                <h3>Smart Robot Toy</h3>
+                <p class="rating">★★★★★ 4.6</p>
+                <p class="price"><del>₹1,099</del> ₹699</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Smart Robot Toy',699)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Smart Robot Toy'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Advanced Robot Toy"
+             data-category="robots"
+             data-price="999">
+
+            <div class="product-image">
+                <img src="https://images.pexels.com/photos/8294567/pexels-photo-8294567.jpeg"
+                     alt="Advanced Robot Toy">
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">ROBOT TOYS</p>
+                <h3>Advanced Robot Toy</h3>
+                <p class="rating">★★★★★ 4.7</p>
+                <p class="price"><del>₹1,499</del> ₹999</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Advanced Robot Toy',999)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Advanced Robot Toy'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Classic Teddy Bear"
+             data-category="plush"
+             data-price="399">
+
+            <div class="product-image">
+                <img src="https://images.pexels.com/photos/5802595/pexels-photo-5802595.jpeg"
+                     alt="Classic Teddy Bear">
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">PLUSH TOYS</p>
+                <h3>Classic Teddy Bear</h3>
+                <p class="rating">★★★★★ 4.8</p>
+                <p class="price"><del>₹699</del> ₹399</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Classic Teddy Bear',399)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Classic Teddy Bear'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Premium Teddy Bear"
+             data-category="plush"
+             data-price="599">
+
+            <div class="product-image">
+                <img src="https://images.pexels.com/photos/708774/pexels-photo-708774.jpeg"
+                     alt="Premium Teddy Bear">
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">PLUSH TOYS</p>
+                <h3>Premium Teddy Bear</h3>
+                <p class="rating">★★★★★ 4.9</p>
+                <p class="price"><del>₹899</del> ₹599</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Premium Teddy Bear',599)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Premium Teddy Bear'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Gaming Controller"
+             data-category="gaming"
+             data-price="899">
+
+            <div class="product-image gaming-placeholder">
+                🎮
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">GAMING</p>
+                <h3>Gaming Controller</h3>
+                <p class="rating">★★★★★ 4.5</p>
+                <p class="price"><del>₹1,299</del> ₹899</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Gaming Controller',899)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Gaming Controller'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Building Blocks Set"
+             data-category="blocks"
+             data-price="499">
+
+            <div class="product-image gaming-placeholder">
+                🧱
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">BUILDING TOYS</p>
+                <h3>Building Blocks Set</h3>
+                <p class="rating">★★★★★ 4.6</p>
+                <p class="price"><del>₹799</del> ₹499</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Building Blocks Set',499)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Building Blocks Set'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Dinosaur Adventure Set"
+             data-category="dinosaur"
+             data-price="649">
+
+            <div class="product-image gaming-placeholder">
+                🦖
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">DINO TOYS</p>
+                <h3>Dinosaur Adventure Set</h3>
+                <p class="rating">★★★★★ 4.7</p>
+                <p class="price"><del>₹999</del> ₹649</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Dinosaur Adventure Set',649)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Dinosaur Adventure Set'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Educational Learning Kit"
+             data-category="educational"
+             data-price="549">
+
+            <div class="product-image gaming-placeholder">
+                🧠
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">EDUCATIONAL</p>
+                <h3>Educational Learning Kit</h3>
+                <p class="rating">★★★★★ 4.8</p>
+                <p class="price"><del>₹899</del> ₹549</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Educational Learning Kit',549)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Educational Learning Kit'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="product-card"
+             data-name="Outdoor Football Set"
+             data-category="outdoor"
+             data-price="449">
+
+            <div class="product-image gaming-placeholder">
+                ⚽
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">OUTDOOR TOYS</p>
+                <h3>Outdoor Football Set</h3>
+                <p class="rating">★★★★★ 4.5</p>
+                <p class="price"><del>₹699</del> ₹449</p>
+
+                <div class="product-actions">
+                    <button onclick="addToCart('Outdoor Football Set',449)">
+                        Add to Cart
+                    </button>
+
+                    <a href="#" onclick="showProductMessage('Outdoor Football Set'); return false;">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="cart-section" id="cart">
+
+    <p class="section-label">YOUR SHOPPING BAG</p>
+    <h2>Your Cart</h2>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-summary">
+        <h3>Total: ₹<span id="cart-total">0</span></h3>
+        <button class="checkout-button" onclick="checkout()">
+            Proceed to Checkout
+        </button>
     </div>
 
+</section>
+
+<footer>
+    <div class="footer-brand">B2K TOYS</div>
+    <p>© 2026 B2K Toys Store. All Rights Reserved.</p>
 </footer>
 
+<div id="toast"></div>
 
 <script src="script.js"></script>
 
