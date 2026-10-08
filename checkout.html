@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2K Toys | Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <a href="index.html">B2K <span>TOYS</span></a>
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="track-order.html">Track Order</a>
+        <a href="cart.html" class="cart-link">
+            Cart <span id="cart-count">0</span>
+        </a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="page-banner">
+        <p>SECURE DEMO CHECKOUT</p>
+        <h1>Checkout</h1>
+    </section>
+
+
+    <section class="form-section">
+
+        <div class="form-container">
+
+            <div id="checkout-form">
+
+                <h2>Customer Information</h2>
+
+                <br>
+
+                <form onsubmit="placeOrder(event)">
+
+                    <div class="form-group">
+                        <label for="customer-name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customer-name"
+                            required
+                            placeholder="Enter your name">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            required
+                            placeholder="Enter your email">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            required
+                            placeholder="Enter phone number">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>
+                            Address
+                        </label>
+
+                        <textarea
+                            required
+                            placeholder="Enter delivery address"></textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>
+                            Payment Method
+                        </label>
+
+                        <select required>
+
+                            <option value="">
+                                Select Payment Method
+                            </option>
+
+                            <option>
+                                Cash on Delivery
+                            </option>
+
+                            <option>
+                                UPI - Demo
+                            </option>
+
+                            <option>
+                                Card - Demo
+                            </option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="summary-row">
+                        <strong>Total Amount</strong>
+
+                        <strong>
+                            ₹<span id="checkout-total">0</span>
+                        </strong>
+                    </div>
+
+
+                    <br>
+
+                    <button
+                        type="submit"
+                        class="form-submit">
+                        PLACE ORDER
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <div id="order-success"
+                 style="display:none; text-align:center;">
+
+                <h2>✓ Order Placed Successfully!</h2>
+
+                <br>
+
+                <p>
+                    Thank you for shopping with B2K Toys.
+                </p>
+
+                <br>
+
+                <p>
+                    Your Demo Order Number:
+                </p>
+
+                <h2 id="order-number"></h2>
+
+                <br>
+
+                <a
+                    href="track-order.html"
+                    class="main-button">
+                    TRACK ORDER
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+            <h2>B2K TOYS</h2>
+            <p>Fun starts here.</p>
+        </div>
+
+        <div>
+            <h3>Shop</h3>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <a href="contact.html">Contact</a>
+            <a href="track-order.html">Track Order</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 B2K Toys Store. Demo E-Commerce Website.</p>
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
