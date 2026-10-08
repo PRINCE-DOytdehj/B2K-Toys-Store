@@ -3,231 +3,532 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>B2K Toys Store</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="navbar">
-    <a href="index.html" class="logo">B2K <span>TOYS</span></a>
+    <!-- ================= NAVBAR ================= -->
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="products.html">Products</a>
-        <a href="#deals">Deals</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <header class="navbar">
 
-    <a href="products.html#cart" class="cart-link">
-        🛒 Cart <span id="cart-count">0</span>
-    </a>
-</header>
-
-<section class="hero">
-    <div class="hero-content">
-        <p class="small-title">WELCOME TO B2K TOYS</p>
-        <h1>BIG TOYS.<br>BIG FUN.</h1>
-        <p>Discover exciting toys for every age, every interest and every adventure.</p>
-
-        <div class="hero-buttons">
-            <a href="products.html" class="main-button">SHOP NOW</a>
-            <a href="#categories" class="secondary-button">EXPLORE CATEGORIES</a>
-        </div>
-    </div>
-</section>
-
-<section id="categories" class="section">
-    <p class="section-label">EXPLORE</p>
-    <h2 class="section-heading">Shop By Category</h2>
-
-    <div class="category-grid">
-
-        <a href="products.html?category=cars" class="category-card">
-            <img src="https://images.pexels.com/photos/13047786/pexels-photo-13047786.jpeg" alt="Remote Control Cars">
-            <div>
-                <h3>Remote Control Cars</h3>
-                <p>Race. Drift. Explore.</p>
-            </div>
-        </a>
-
-        <a href="products.html?category=robots" class="category-card">
-            <img src="https://images.pexels.com/photos/8566462/pexels-photo-8566462.jpeg" alt="Robot Toys">
-            <div>
-                <h3>Robots</h3>
-                <p>Smart toys for smart minds.</p>
-            </div>
-        </a>
-
-        <a href="products.html?category=plush" class="category-card">
-            <img src="https://images.pexels.com/photos/5802595/pexels-photo-5802595.jpeg" alt="Teddy Bears">
-            <div>
-                <h3>Plush & Teddy</h3>
-                <p>Soft friends for everyone.</p>
-            </div>
-        </a>
-
-        <a href="products.html?category=gaming" class="category-card">
-            <div class="category-placeholder">🎮</div>
-            <div>
-                <h3>Gaming</h3>
-                <p>Level up the fun.</p>
-            </div>
-        </a>
-
-        <a href="products.html?category=blocks" class="category-card">
-            <div class="category-placeholder">🧱</div>
-            <div>
-                <h3>Building Blocks</h3>
-                <p>Build something amazing.</p>
-            </div>
-        </a>
-
-        <a href="products.html?category=dinosaur" class="category-card">
-            <div class="category-placeholder">🦖</div>
-            <div>
-                <h3>Dinosaur Toys</h3>
-                <p>Enter the prehistoric world.</p>
-            </div>
-        </a>
-
-        <a href="products.html?category=educational" class="category-card">
-            <div class="category-placeholder">🧠</div>
-            <div>
-                <h3>Educational Toys</h3>
-                <p>Learn while having fun.</p>
-            </div>
-        </a>
-
-        <a href="products.html?category=outdoor" class="category-card">
-            <div class="category-placeholder">⚽</div>
-            <div>
-                <h3>Outdoor & Sports</h3>
-                <p>Play outside. Stay active.</p>
-            </div>
-        </a>
-
-    </div>
-</section>
-
-<section id="deals" class="deal-section">
-    <div>
-        <p class="section-label">LIMITED TIME</p>
-        <h2>BEST TOY DEALS</h2>
-        <p>Grab your favourite toys at special prices.</p>
-        <a href="products.html" class="main-button">VIEW DEALS</a>
-    </div>
-
-    <div class="deal-box">
-        <strong>UP TO</strong>
-        <span>40%</span>
-        <strong>OFF</strong>
-    </div>
-</section>
-
-<section class="section">
-    <p class="section-label">TRENDING NOW</p>
-    <h2 class="section-heading">Best Sellers</h2>
-
-    <div class="featured-grid">
-
-        <div class="featured-card">
-            <img src="https://images.pexels.com/photos/13047786/pexels-photo-13047786.jpeg" alt="RC Car">
-            <div class="featured-info">
-                <span class="badge">BEST SELLER</span>
-                <h3>Speed Racer RC Car</h3>
-                <p class="rating">★★★★★ 4.7</p>
-                <p class="price"><del>₹999</del> ₹599</p>
-                <button onclick="addToCart('Speed Racer RC Car',599)">
-                    Add to Cart
-                </button>
-            </div>
+        <div class="logo">
+            B2K <span>TOYS</span>
         </div>
 
-        <div class="featured-card">
-            <img src="https://images.pexels.com/photos/8566462/pexels-photo-8566462.jpeg" alt="Robot">
-            <div class="featured-info">
-                <span class="badge">POPULAR</span>
-                <h3>Smart Robot Toy</h3>
-                <p class="rating">★★★★★ 4.6</p>
-                <p class="price"><del>₹1,099</del> ₹699</p>
-                <button onclick="addToCart('Smart Robot Toy',699)">
-                    Add to Cart
-                </button>
-            </div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="products.html">Products</a>
+            <a href="#deals">Deals</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="products.html#cart" class="cart-link">
+            🛒 Cart <span id="cart-count">0</span>
+        </a>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                B2K TOYS STORE
+            </p>
+
+            <h1>
+                BIG TOYS.<br>
+                BIG FUN.
+            </h1>
+
+            <p>
+                Discover exciting toys, games and gifts
+                for every age.
+            </p>
+
+            <a href="products.html" class="hero-btn">
+                Shop Now
+            </a>
+
         </div>
 
-        <div class="featured-card">
-            <img src="https://images.pexels.com/photos/5802595/pexels-photo-5802595.jpeg" alt="Teddy Bear">
-            <div class="featured-info">
-                <span class="badge">TOP RATED</span>
-                <h3>Classic Teddy Bear</h3>
-                <p class="rating">★★★★★ 4.8</p>
-                <p class="price"><del>₹699</del> ₹399</p>
-                <button onclick="addToCart('Classic Teddy Bear',399)">
-                    Add to Cart
-                </button>
-            </div>
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="section" id="categories">
+
+        <div class="section-heading">
+
+            <p>EXPLORE</p>
+
+            <h2>
+                Shop By Category
+            </h2>
+
+            <span>
+                Find the perfect toy for every interest.
+            </span>
+
         </div>
 
-    </div>
-</section>
 
-<section id="about" class="about-section">
-    <div>
-        <p class="section-label">ABOUT B2K</p>
-        <h2>Toys That Make Childhood Better.</h2>
+        <div class="category-grid">
+
+            <!-- Cars -->
+
+            <a href="products.html?category=cars" class="category-card">
+
+                <div class="category-image">
+                    <img
+                        src="https://images.pexels.com/photos/10387615/pexels-photo-10387615.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Realistic toy car">
+                </div>
+
+                <div class="category-info">
+                    <h3>RC Cars</h3>
+                    <p>Fast & exciting rides</p>
+                </div>
+
+            </a>
+
+
+            <!-- Robots -->
+
+            <a href="products.html?category=robots" class="category-card">
+
+                <div class="category-image">
+                    <img
+                        src="https://images.pexels.com/photos/8566462/pexels-photo-8566462.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Robot toy">
+                </div>
+
+                <div class="category-info">
+                    <h3>Robots</h3>
+                    <p>Smart & interactive toys</p>
+                </div>
+
+            </a>
+
+
+            <!-- Teddy -->
+
+            <a href="products.html?category=plush" class="category-card">
+
+                <div class="category-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/5802595/pexels-photo-5802595.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Brown teddy bear plush toy">
+
+                </div>
+
+                <div class="category-info">
+                    <h3>Plush & Teddy</h3>
+                    <p>Soft & cuddly friends</p>
+                </div>
+
+            </a>
+
+
+            <!-- Gaming -->
+
+            <a href="products.html?category=gaming" class="category-card">
+
+                <div class="category-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/3945653/pexels-photo-3945653.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Gaming controller">
+
+                </div>
+
+                <div class="category-info">
+                    <h3>Gaming</h3>
+                    <p>Fun for every gamer</p>
+                </div>
+
+            </a>
+
+
+            <!-- Building Blocks -->
+
+            <a href="products.html?category=blocks" class="category-card">
+
+                <div class="category-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/3662667/pexels-photo-3662667.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Building blocks toy">
+
+                </div>
+
+                <div class="category-info">
+                    <h3>Building Blocks</h3>
+                    <p>Build your imagination</p>
+                </div>
+
+            </a>
+
+
+            <!-- Dinosaur -->
+
+            <a href="products.html?category=dinosaur" class="category-card">
+
+                <div class="category-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/162137/dinosaur-toy-dinosaur-figure-figures-162137.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Dinosaur toy">
+
+                </div>
+
+                <div class="category-info">
+                    <h3>Dinosaur Toys</h3>
+                    <p>Roar into adventure</p>
+                </div>
+
+            </a>
+
+
+            <!-- Educational -->
+
+            <a href="products.html?category=educational" class="category-card">
+
+                <div class="category-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/1598127/pexels-photo-1598127.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Educational children's toys">
+
+                </div>
+
+                <div class="category-info">
+                    <h3>Educational</h3>
+                    <p>Learn while having fun</p>
+                </div>
+
+            </a>
+
+
+            <!-- Outdoor -->
+
+            <a href="products.html?category=outdoor" class="category-card">
+
+                <div class="category-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/296302/pexels-photo-296302.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Outdoor sports toy">
+
+                </div>
+
+                <div class="category-info">
+                    <h3>Outdoor & Sports</h3>
+                    <p>Play outside & stay active</p>
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DEALS ================= -->
+
+    <section class="deal-banner" id="deals">
+
+        <div>
+
+            <p>
+                LIMITED TIME OFFER
+            </p>
+
+            <h2>
+                BEST TOY DEALS
+            </h2>
+
+            <span>
+                Save up to 40% on selected toys.
+            </span>
+
+        </div>
+
+        <a href="products.html" class="deal-btn">
+            View Deals
+        </a>
+
+    </section>
+
+
+    <!-- ================= BEST SELLERS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <p>POPULAR PICKS</p>
+
+            <h2>
+                Best Sellers
+            </h2>
+
+            <span>
+                Toys loved by our customers.
+            </span>
+
+        </div>
+
+
+        <div class="featured-grid">
+
+
+            <!-- Product 1 -->
+
+            <div class="featured-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/10387615/pexels-photo-10387615.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Speed Racer RC Car">
+
+                </div>
+
+                <div class="product-content">
+
+                    <span class="product-category">
+                        RC CARS
+                    </span>
+
+                    <h3>
+                        Speed Racer RC Car
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★ <span>4.8</span>
+                    </div>
+
+                    <strong>
+                        ₹599
+                    </strong>
+
+                    <a href="products.html">
+                        View Product
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+
+            <div class="featured-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/8566462/pexels-photo-8566462.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Smart Robot Toy">
+
+                </div>
+
+                <div class="product-content">
+
+                    <span class="product-category">
+                        ROBOTS
+                    </span>
+
+                    <h3>
+                        Smart Robot Toy
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★ <span>4.7</span>
+                    </div>
+
+                    <strong>
+                        ₹699
+                    </strong>
+
+                    <a href="products.html">
+                        View Product
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+
+            <div class="featured-card">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.pexels.com/photos/5786759/pexels-photo-5786759.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Premium Teddy Bear">
+
+                </div>
+
+                <div class="product-content">
+
+                    <span class="product-category">
+                        PLUSH
+                    </span>
+
+                    <h3>
+                        Premium Teddy Bear
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★ <span>4.9</span>
+                    </div>
+
+                    <strong>
+                        ₹599
+                    </strong>
+
+                    <a href="products.html">
+                        View Product
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about-section" id="about">
+
+        <div class="about-content">
+
+            <p>
+                ABOUT B2K
+            </p>
+
+            <h2>
+                Toys That Make
+                Childhood Better.
+            </h2>
+
+            <span>
+                B2K Toys Store is a dummy e-commerce project
+                created to provide a realistic online toy
+                shopping experience.
+            </span>
+
+            <br><br>
+
+            <span>
+                From remote-control cars and smart robots
+                to cuddly teddy bears and educational toys,
+                we bring everything together in one place.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="section contact-section" id="contact">
+
+        <div class="section-heading">
+
+            <p>GET IN TOUCH</p>
+
+            <h2>
+                Contact Us
+            </h2>
+
+            <span>
+                Have a question? We are here to help.
+            </span>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-box">
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    support@b2ktoys.com
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    Phone
+                </h3>
+
+                <p>
+                    +91 98765 43210
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    Location
+                </h3>
+
+                <p>
+                    India
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            B2K <span>TOYS</span>
+        </div>
+
         <p>
-            B2K Toys Store is a demo e-commerce website created to provide
-            a simple and enjoyable way to explore toys, games and gifts.
+            © 2026 B2K Toys Store. All Rights Reserved.
         </p>
-        <p>
-            From racing cars and robots to plush toys and educational games,
-            there is something for every little explorer.
-        </p>
-    </div>
-</section>
 
-<section id="contact" class="contact-section">
-    <p class="section-label">GET IN TOUCH</p>
-    <h2>Contact B2K Toys</h2>
+    </footer>
 
-    <div class="contact-grid">
-        <div>
-            <h3>Email</h3>
-            <p>support@b2ktoys.com</p>
-        </div>
 
-        <div>
-            <h3>Phone</h3>
-            <p>+91 98765 43210</p>
-        </div>
+    <script src="script.js"></script>
 
-        <div>
-            <h3>Location</h3>
-            <p>India</p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="footer-brand">B2K TOYS</div>
-
-    <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="#categories">Categories</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <p>© 2026 B2K Toys Store. All Rights Reserved.</p>
-</footer>
-
-<div id="toast"></div>
-
-<script src="script.js"></script>
 </body>
 </html>
