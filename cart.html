@@ -1,116 +1,169 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2K Toys | Cart</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shopping Cart | B2K Toys Store</title>
+  <meta name="description" content="Review your selected toys and update your shopping cart at B2K Toys Store.">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="navbar">
+  <div class="announcement-bar">
+    Welcome to B2K Toys Store — Fun begins here!
+  </div>
 
-    <div class="logo">
-        <a href="index.html">B2K <span>TOYS</span></a>
-    </div>
+  <header class="site-header">
+    <div class="header-inner">
 
-    <nav class="nav-links">
+      <a href="index.html" class="logo" aria-label="B2K Toys Store Home">
+        <span class="logo-mark">B2K</span>
+        <span>B2K Toys Store</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" id="main-nav">
         <a href="index.html">Home</a>
-        <a href="categories.html">Categories</a>
         <a href="products.html">Products</a>
+        <a href="categories.html">Categories</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="track-order.html">Track Order</a>
+      </nav>
 
-        <a href="cart.html" class="cart-link active">
-            Cart <span id="cart-count">0</span>
+      <div class="header-actions">
+        <a href="cart.html" class="header-cart" aria-current="page">
+          Cart <span class="cart-count" id="cart-count">0</span>
         </a>
-    </nav>
+      </div>
 
-</header>
+    </div>
+  </header>
 
+  <main>
+    <section class="section">
+      <div class="container">
 
-<main>
-
-    <section class="page-banner">
-        <p>YOUR SHOPPING BAG</p>
-        <h1>Shopping Cart</h1>
-    </section>
-
-
-    <section class="cart-section">
+        <div class="page-heading">
+          <p class="hero-tag">YOUR SHOPPING BAG</p>
+          <h1>Shopping Cart</h1>
+          <p>Review your toys before proceeding to checkout.</p>
+        </div>
 
         <div class="cart-layout">
 
-            <div id="cart-items" class="cart-list">
-                <!-- Cart items load here -->
+          <!-- JavaScript displays cart products here. -->
+          <div
+            id="cart-items"
+            class="cart-items"
+            aria-live="polite"
+          >
+            <div class="empty-state">
+              <h2>Your cart is loading...</h2>
+              <p>Please wait while we load your selected toys.</p>
+            </div>
+          </div>
+
+          <aside class="cart-summary">
+            <h2>Order Summary</h2>
+
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="cart-subtotal">₹0</span>
             </div>
 
-
-            <div class="cart-summary">
-
-                <h2>Order Summary</h2>
-
-                <div class="summary-row">
-                    <span>Total</span>
-                    <strong>₹<span id="cart-total">0</span></strong>
-                </div>
-
-                <a
-                    href="checkout.html"
-                    class="checkout-button"
-                    style="display:block; text-align:center;">
-                    PROCEED TO CHECKOUT
-                </a>
-
-                <a
-                    href="products.html"
-                    class="outline-button"
-                    style="display:block; text-align:center; margin-top:12px;">
-                    CONTINUE SHOPPING
-                </a>
-
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span id="cart-shipping">Calculated at checkout</span>
             </div>
+
+            <div class="summary-row summary-total">
+              <span>Total</span>
+              <span id="cart-total">₹0</span>
+            </div>
+
+            <p class="notice">
+              This is a demo storefront. No real payment is processed.
+            </p>
+
+            <a
+              href="checkout.html"
+              class="btn btn-primary"
+              id="checkout-button"
+              style="width: 100%; text-align: center;"
+            >
+              Proceed to Checkout
+            </a>
+
+            <a
+              href="products.html"
+              class="btn btn-secondary"
+              style="width: 100%; text-align: center; margin-top: 12px;"
+            >
+              Continue Shopping
+            </a>
+          </aside>
 
         </div>
 
+      </div>
     </section>
+  </main>
 
-</main>
+  <footer class="site-footer">
+    <div class="container">
 
+      <div class="footer-grid">
 
-<footer class="footer">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">B2K</span>
+            <span>B2K Toys Store</span>
+          </a>
 
-    <div class="footer-grid">
-
-        <div>
-            <h2>B2K TOYS</h2>
-            <p>Fun starts here.</p>
+          <p>
+            Bringing smiles, creativity, and fun to every child's playtime.
+          </p>
         </div>
 
-        <div>
-            <h3>Shop</h3>
-            <a href="products.html">Products</a>
-            <a href="categories.html">Categories</a>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="categories.html">Categories</a>
+          <a href="about.html">About Us</a>
         </div>
 
-        <div>
-            <h3>Support</h3>
-            <a href="contact.html">Contact</a>
-            <a href="track-order.html">Track Order</a>
+        <div class="footer-column">
+          <h3>Customer Support</h3>
+          <a href="contact.html">Contact Us</a>
+          <a href="cart.html">Shopping Cart</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="track-order.html">Track Order</a>
         </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 B2K Toys Store. All rights reserved.</p>
+      </div>
 
     </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 B2K Toys Store. Demo E-Commerce Website.</p>
-    </div>
-
-</footer>
-
-
-<script src="script.js"></script>
+  </footer>
 
 </body>
 </html>
+```
