@@ -1,210 +1,249 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2K Toys | About</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us | B2K Toys Store</title>
+  <meta name="description" content="Learn about B2K Toys Store, our mission, and our love for fun, creativity, and play.">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="navbar">
+  <div class="announcement-bar">
+    Welcome to B2K Toys Store — Fun begins here!
+  </div>
 
-    <div class="logo">
-        <a href="index.html">B2K <span>TOYS</span></a>
-    </div>
+  <header class="site-header">
+    <div class="header-inner">
 
-    <nav class="nav-links">
+      <a href="index.html" class="logo" aria-label="B2K Toys Store Home">
+        <span class="logo-mark">B2K</span>
+        <span>B2K Toys Store</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" id="main-nav">
         <a href="index.html">Home</a>
-        <a href="categories.html">Categories</a>
         <a href="products.html">Products</a>
-        <a href="about.html" class="active">About</a>
+        <a href="categories.html">Categories</a>
+        <a href="about.html" aria-current="page">About</a>
         <a href="contact.html">Contact</a>
-        <a href="track-order.html">Track Order</a>
-        <a href="cart.html" class="cart-link">
-            Cart <span id="cart-count">0</span>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html" class="header-cart">
+          Cart <span class="cart-count" id="cart-count">0</span>
         </a>
-    </nav>
+      </div>
 
-</header>
+    </div>
+  </header>
 
-
-<main>
-
-    <section class="page-banner">
-        <p>ABOUT B2K</p>
-        <h1>Our Story</h1>
-        <span>A modern toy shopping experience.</span>
-    </section>
-
+  <main>
 
     <section class="section">
+      <div class="container">
+
+        <div class="page-heading">
+          <p class="hero-tag">GET TO KNOW US</p>
+          <h1>About B2K Toys Store</h1>
+          <p>
+            A toy store project built around imagination, creativity, and fun.
+          </p>
+        </div>
 
         <div class="about-grid">
 
-            <div class="about-image">
-
-                <img
-                    src="https://images.pexels.com/photos/3662667/pexels-photo-3662667.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                    alt="Toys">
-
+          <div class="about-visual">
+            <div class="hero-toy" aria-label="Toy collection illustration">
+              🧸 🚗 🧩
             </div>
 
+            <h2>Play. Learn. Imagine.</h2>
 
-            <div class="about-text">
+            <p>
+              Every toy opens the door to a new adventure.
+            </p>
+          </div>
 
-                <p class="small-heading">
-                    B2K TOYS STORE
-                </p>
+          <div class="about-content">
+            <p class="hero-tag">OUR STORY</p>
 
-                <h2>
-                    Built Around
-                    The Joy Of Play.
-                </h2>
+            <h2>Making Playtime More Fun</h2>
 
-                <p>
-                    B2K Toys is a demo e-commerce website
-                    created to provide a modern and simple
-                    online toy shopping experience.
-                </p>
+            <p>
+              B2K Toys Store is a toy-store website project designed to make
+              browsing toys simple, enjoyable, and convenient.
+            </p>
 
-                <p>
-                    Our collection includes remote control
-                    cars, robots, soft toys, gaming products,
-                    educational toys, building sets and more.
-                </p>
+            <p>
+              Our collection showcases different types of toys, including
+              soft toys, educational toys, toy vehicles, action toys, and
+              sports toys.
+            </p>
 
-                <p>
-                    The website focuses on easy navigation,
-                    product discovery, shopping cart
-                    management and a simple checkout flow.
-                </p>
+            <p>
+              We believe that play can encourage curiosity, creativity,
+              problem-solving, and imagination.
+            </p>
 
-            </div>
+            <a href="products.html" class="btn btn-primary">
+              Explore Our Products
+            </a>
+          </div>
 
         </div>
 
+      </div>
     </section>
 
+    <section class="section section-light">
+      <div class="container">
 
-    <section class="section dark-section">
+        <div class="section-heading">
+          <h2>What Makes B2K Special?</h2>
+          <p>Our project focuses on a simple and user-friendly shopping experience.</p>
+        </div>
 
-        <div class="section-heading light-heading">
+        <div class="benefits-grid">
 
-            <p>OUR VALUES</p>
+          <div class="benefit-item">
+            <span class="category-icon">🎨</span>
+            <div>
+              <h3>Creativity</h3>
+              <p>Toys that inspire imagination and creative play.</p>
+            </div>
+          </div>
 
-            <h2>
-                Simple. Modern. Fun.
-            </h2>
+          <div class="benefit-item">
+            <span class="category-icon">🧠</span>
+            <div>
+              <h3>Learning</h3>
+              <p>Explore toys that encourage learning through play.</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <span class="category-icon">🛒</span>
+            <div>
+              <h3>Easy Browsing</h3>
+              <p>Browse products by category and find favourites quickly.</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <span class="category-icon">📱</span>
+            <div>
+              <h3>Responsive Design</h3>
+              <p>Explore the website on desktop, tablet, or mobile screens.</p>
+            </div>
+          </div>
 
         </div>
 
-
-        <div class="features-grid">
-
-            <div class="feature-box">
-
-                <div class="feature-number">
-                    01
-                </div>
-
-                <h3>Quality Experience</h3>
-
-                <p>
-                    A clean interface designed
-                    around the customer.
-                </p>
-
-            </div>
-
-
-            <div class="feature-box">
-
-                <div class="feature-number">
-                    02
-                </div>
-
-                <h3>Easy Discovery</h3>
-
-                <p>
-                    Categories and search help
-                    customers find products quickly.
-                </p>
-
-            </div>
-
-
-            <div class="feature-box">
-
-                <div class="feature-number">
-                    03
-                </div>
-
-                <h3>Smart Shopping</h3>
-
-                <p>
-                    Cart and checkout functionality
-                    creates a realistic shopping flow.
-                </p>
-
-            </div>
-
-
-            <div class="feature-box">
-
-                <div class="feature-number">
-                    04
-                </div>
-
-                <h3>Modern Design</h3>
-
-                <p>
-                    Black, white and grey styling
-                    gives B2K a premium appearance.
-                </p>
-
-            </div>
-
-        </div>
-
+      </div>
     </section>
 
-</main>
+    <section class="section">
+      <div class="container">
 
-
-<footer class="footer">
-
-    <div class="footer-grid">
-
-        <div>
-            <h2>B2K TOYS</h2>
-            <p>Fun starts here.</p>
+        <div class="section-heading">
+          <h2>Explore More</h2>
+          <p>Discover everything our demo store has to offer.</p>
         </div>
 
-        <div>
-            <h3>Shop</h3>
-            <a href="products.html">Products</a>
-            <a href="categories.html">Categories</a>
-            <a href="cart.html">Cart</a>
+        <div class="category-grid">
+
+          <a href="categories.html" class="category-card">
+            <div class="category-icon">🧸</div>
+            <h2>Categories</h2>
+            <p>Explore toys across different categories.</p>
+            <span class="btn btn-secondary">View Categories</span>
+          </a>
+
+          <a href="cart.html" class="category-card">
+            <div class="category-icon">🛒</div>
+            <h2>Your Cart</h2>
+            <p>Review toys selected for your demo order.</p>
+            <span class="btn btn-secondary">Open Cart</span>
+          </a>
+
+          <a href="contact.html" class="category-card">
+            <div class="category-icon">💬</div>
+            <h2>Contact Us</h2>
+            <p>Share feedback or questions about the website.</p>
+            <span class="btn btn-secondary">Get in Touch</span>
+          </a>
+
         </div>
 
-        <div>
-            <h3>Support</h3>
-            <a href="contact.html">Contact</a>
-            <a href="track-order.html">Track Order</a>
+        <div class="notice" style="margin-top: 32px;">
+          <strong>Project note:</strong>
+          B2K Toys Store is a demonstration website. Checkout, order tracking,
+          and contact features do not connect to real payment, shipping,
+          or email services.
         </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">B2K</span>
+            <span>B2K Toys Store</span>
+          </a>
+
+          <p>
+            Bringing smiles, creativity, and fun to every child's playtime.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="categories.html">Categories</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Customer Support</h3>
+          <a href="contact.html">Contact Us</a>
+          <a href="cart.html">Shopping Cart</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="track-order.html">Track Order</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 B2K Toys Store. All rights reserved.</p>
+      </div>
 
     </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 B2K Toys Store. Demo E-Commerce Website.</p>
-    </div>
-
-</footer>
-
-
-<script src="script.js"></script>
+  </footer>
 
 </body>
 </html>
+```
