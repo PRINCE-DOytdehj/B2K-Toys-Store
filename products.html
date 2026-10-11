@@ -1,1096 +1,200 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore toys, soft toys, educational games, vehicles and gifts at B2K Toys Store.">
+  <meta name="theme-color" content="#111111">
 
-    <meta charset="UTF-8">
+  <title>All Products | B2K Toys Store</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Products | B2K Toys</title>
-
-    <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 
 <body>
 
+  <div class="announcement-bar">
+    Discover something special for every little smile!
+  </div>
 
-    <!-- ================= NAVBAR ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
 
-    <header class="navbar">
+      <a href="index.html" class="logo" aria-label="B2K Toys Store home">
+        <span class="logo-mark">B2K</span>
+        <span>Toys Store</span>
+      </a>
 
-        <div class="logo">
-            B2K <span>TOYS</span>
-        </div>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >☰</button>
 
-        <nav>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="categories.html">Categories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="index.html#categories">
-                Categories
-            </a>
-
-            <a href="products.html" class="active">
-                Products
-            </a>
-
-            <a href="index.html#deals">
-                Deals
-            </a>
-
-            <a href="index.html#about">
-                About
-            </a>
-
-            <a href="index.html#contact">
-                Contact
-            </a>
-
-        </nav>
-
-
-        <a href="#cart" class="cart-link">
-
-            🛒 Cart
-
-            <span id="cart-count">
-                0
-            </span>
-
+      <div class="header-actions">
+        <a href="cart.html" class="header-cart" aria-label="Shopping cart">
+          🛒 Cart
+          <span class="cart-count" data-cart-count>0</span>
         </a>
+      </div>
 
-    </header>
+    </div>
+  </header>
 
+  <main>
 
-    <!-- ================= PRODUCTS HEADER ================= -->
-
-    <section class="products-header">
-
+    <section class="page-heading">
+      <div class="container">
+        <h1>Our Toys Collection</h1>
         <p>
-            B2K TOYS COLLECTION
+          Explore toys for learning, playing, creating and gifting.
+          Find something special for every little adventurer.
         </p>
-
-        <h1>
-            Explore Our Products
-        </h1>
-
-        <span>
-            Discover toys for fun, learning and adventure.
-        </span>
-
+      </div>
     </section>
 
+    <section class="section">
+      <div class="container">
 
-    <!-- ================= SEARCH + SORT ================= -->
+        <div class="product-toolbar">
 
-    <section class="product-controls">
-
-        <div class="search-box">
+          <div class="search-box">
+            <span aria-hidden="true">🔎</span>
 
             <input
-                type="text"
-                id="search"
-                placeholder="Search toys..."
-                onkeyup="searchProducts()">
+              type="search"
+              id="search-input"
+              placeholder="Search toys by name..."
+              aria-label="Search products"
+            >
+          </div>
+
+          <div class="filter-group">
+
+            <select id="category-filter" aria-label="Filter by category">
+              <option value="">All Categories</option>
+              <option value="Soft Toys">Soft Toys</option>
+              <option value="Educational Toys">Educational Toys</option>
+              <option value="Remote Control">Remote Control</option>
+              <option value="Vehicles">Vehicles</option>
+              <option value="Baby Toys">Baby Toys</option>
+              <option value="Action Toys">Action Toys</option>
+              <option value="Sports Toys">Sports Toys</option>
+            </select>
+
+            <select id="sort-products" aria-label="Sort products">
+              <option value="">Default Sorting</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+
+          </div>
 
         </div>
 
-
-        <select
-            id="sort"
-            onchange="sortProducts()">
-
-            <option value="default">
-                Sort Products
-            </option>
-
-            <option value="low">
-                Price: Low to High
-            </option>
-
-            <option value="high">
-                Price: High to Low
-            </option>
-
-            <option value="name">
-                Name: A to Z
-            </option>
-
-        </select>
-
-    </section>
-
-
-    <!-- ================= CATEGORY FILTER ================= -->
-
-    <section class="filter-section">
-
-        <button onclick="filterCategory('all')">
-            All
-        </button>
-
-        <button onclick="filterCategory('cars')">
-            RC Cars
-        </button>
-
-        <button onclick="filterCategory('robots')">
-            Robots
-        </button>
-
-        <button onclick="filterCategory('plush')">
-            Plush & Teddy
-        </button>
-
-        <button onclick="filterCategory('gaming')">
-            Gaming
-        </button>
-
-        <button onclick="filterCategory('blocks')">
-            Building Blocks
-        </button>
-
-        <button onclick="filterCategory('dinosaur')">
-            Dinosaur
-        </button>
-
-        <button onclick="filterCategory('educational')">
-            Educational
-        </button>
-
-        <button onclick="filterCategory('outdoor')">
-            Outdoor
-        </button>
-
-    </section>
-
-
-    <!-- ================= PRODUCT GRID ================= -->
-
-    <main class="products-container">
-
-        <div class="product-grid" id="product-grid">
-
-
-            <!-- PRODUCT 1 -->
-
-            <article
-                class="product-card"
-                data-category="cars"
-                data-name="Speed Racer RC Car"
-                data-price="599">
-
-                <div class="product-photo">
-
-                    <span class="badge">
-                        BEST SELLER
-                    </span>
-
-                    <img
-                        src="https://images.pexels.com/photos/10387615/pexels-photo-10387615.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Speed Racer RC Car">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        RC CARS
-                    </small>
-
-                    <h3>
-                        Speed Racer RC Car
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★★
-                        <span>4.8</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹999
-                        </del>
-
-                        <strong>
-                            ₹599
-                        </strong>
-
-                        <span>
-                            40% OFF
-                        </span>
-
-                    </div>
-
-
-                    <button
-                        onclick="addToCart('Speed Racer RC Car',599)">
-
-                        Add to Cart
-
-                    </button>
-
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Speed Racer RC Car')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 2 -->
-
-            <article
-                class="product-card"
-                data-category="cars"
-                data-name="Monster Truck RC"
-                data-price="799">
-
-                <div class="product-photo">
-
-                    <span class="badge">
-                        HOT
-                    </span>
-
-                    <img
-                        src="https://images.pexels.com/photos/9227215/pexels-photo-9227215.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Monster Truck RC Toy">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        RC CARS
-                    </small>
-
-                    <h3>
-                        Monster Truck RC
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★★
-                        <span>4.7</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹1299
-                        </del>
-
-                        <strong>
-                            ₹799
-                        </strong>
-
-                        <span>
-                            38% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Monster Truck RC',799)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Monster Truck RC')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 3 -->
-
-            <article
-                class="product-card"
-                data-category="cars"
-                data-name="Off-Road RC Car"
-                data-price="899">
-
-                <div class="product-photo">
-
-                    <img
-                        src="https://images.pexels.com/photos/5190162/pexels-photo-5190162.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Off Road RC Car">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        RC CARS
-                    </small>
-
-                    <h3>
-                        Off-Road RC Car
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★☆
-                        <span>4.6</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹1499
-                        </del>
-
-                        <strong>
-                            ₹899
-                        </strong>
-
-                        <span>
-                            40% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Off-Road RC Car',899)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Off-Road RC Car')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 4 -->
-
-            <article
-                class="product-card"
-                data-category="robots"
-                data-name="Smart Robot Toy"
-                data-price="699">
-
-                <div class="product-photo">
-
-                    <span class="badge">
-                        POPULAR
-                    </span>
-
-                    <img
-                        src="https://images.pexels.com/photos/8566462/pexels-photo-8566462.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Smart Robot Toy">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        ROBOTS
-                    </small>
-
-                    <h3>
-                        Smart Robot Toy
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★★
-                        <span>4.7</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹1099
-                        </del>
-
-                        <strong>
-                            ₹699
-                        </strong>
-
-                        <span>
-                            36% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Smart Robot Toy',699)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Smart Robot Toy')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 5 -->
-
-            <article
-                class="product-card"
-                data-category="robots"
-                data-name="Advanced Robot Toy"
-                data-price="999">
-
-                <div class="product-photo">
-
-                    <img
-                        src="https://images.pexels.com/photos/8294567/pexels-photo-8294567.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Advanced Robot Toy">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        ROBOTS
-                    </small>
-
-                    <h3>
-                        Advanced Robot Toy
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★★
-                        <span>4.8</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹1599
-                        </del>
-
-                        <strong>
-                            ₹999
-                        </strong>
-
-                        <span>
-                            37% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Advanced Robot Toy',999)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Advanced Robot Toy')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 6 -->
-
-            <article
-                class="product-card"
-                data-category="plush"
-                data-name="Classic Teddy Bear"
-                data-price="399">
-
-                <div class="product-photo">
-
-                    <span class="badge">
-                        CUTE PICK
-                    </span>
-
-                    <img
-                        src="https://images.pexels.com/photos/5802595/pexels-photo-5802595.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Classic Brown Teddy Bear">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        PLUSH & TEDDY
-                    </small>
-
-                    <h3>
-                        Classic Teddy Bear
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★★
-                        <span>4.9</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹699
-                        </del>
-
-                        <strong>
-                            ₹399
-                        </strong>
-
-                        <span>
-                            43% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Classic Teddy Bear',399)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Classic Teddy Bear')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 7 -->
-
-            <article
-                class="product-card"
-                data-category="plush"
-                data-name="Premium Teddy Bear"
-                data-price="599">
-
-                <div class="product-photo">
-
-                    <img
-                        src="https://images.pexels.com/photos/5786759/pexels-photo-5786759.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Premium Teddy Bear">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        PLUSH & TEDDY
-                    </small>
-
-                    <h3>
-                        Premium Teddy Bear
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★★
-                        <span>4.9</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹999
-                        </del>
-
-                        <strong>
-                            ₹599
-                        </strong>
-
-                        <span>
-                            40% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Premium Teddy Bear',599)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Premium Teddy Bear')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 8 -->
-
-            <article
-                class="product-card"
-                data-category="gaming"
-                data-name="Gaming Controller"
-                data-price="899">
-
-                <div class="product-photo">
-
-                    <span class="badge">
-                        GAMING
-                    </span>
-
-                    <img
-                        src="https://images.pexels.com/photos/3945653/pexels-photo-3945653.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Gaming Controller">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        GAMING
-                    </small>
-
-                    <h3>
-                        Gaming Controller
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★☆
-                        <span>4.5</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹1399
-                        </del>
-
-                        <strong>
-                            ₹899
-                        </strong>
-
-                        <span>
-                            36% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Gaming Controller',899)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Gaming Controller')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 9 -->
-
-            <article
-                class="product-card"
-                data-category="blocks"
-                data-name="Building Blocks Set"
-                data-price="499">
-
-                <div class="product-photo">
-
-                    <span class="badge">
-                        NEW
-                    </span>
-
-                    <img
-                        src="https://images.pexels.com/photos/3662667/pexels-photo-3662667.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Building Blocks Set">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        BUILDING BLOCKS
-                    </small>
-
-                    <h3>
-                        Building Blocks Set
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★★
-                        <span>4.6</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹799
-                        </del>
-
-                        <strong>
-                            ₹499
-                        </strong>
-
-                        <span>
-                            38% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Building Blocks Set',499)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Building Blocks Set')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 10 -->
-
-            <article
-                class="product-card"
-                data-category="dinosaur"
-                data-name="Dinosaur Adventure Toy"
-                data-price="549">
-
-                <div class="product-photo">
-
-                    <img
-                        src="https://images.pexels.com/photos/162137/dinosaur-toy-dinosaur-figure-figures-162137.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Dinosaur Toy">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        DINOSAUR
-                    </small>
-
-                    <h3>
-                        Dinosaur Adventure Toy
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★☆
-                        <span>4.5</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹899
-                        </del>
-
-                        <strong>
-                            ₹549
-                        </strong>
-
-                        <span>
-                            39% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Dinosaur Adventure Toy',549)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Dinosaur Adventure Toy')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 11 -->
-
-            <article
-                class="product-card"
-                data-category="educational"
-                data-name="Learning Activity Kit"
-                data-price="449">
-
-                <div class="product-photo">
-
-                    <span class="badge">
-                        LEARNING
-                    </span>
-
-                    <img
-                        src="https://images.pexels.com/photos/1598127/pexels-photo-1598127.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Educational Learning Toy">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        EDUCATIONAL
-                    </small>
-
-                    <h3>
-                        Learning Activity Kit
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★★
-                        <span>4.7</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹699
-                        </del>
-
-                        <strong>
-                            ₹449
-                        </strong>
-
-                        <span>
-                            36% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Learning Activity Kit',449)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Learning Activity Kit')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 12 -->
-
-            <article
-                class="product-card"
-                data-category="outdoor"
-                data-name="Outdoor Sports Toy"
-                data-price="649">
-
-                <div class="product-photo">
-
-                    <span class="badge">
-                        ACTIVE
-                    </span>
-
-                    <img
-                        src="https://images.pexels.com/photos/296302/pexels-photo-296302.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                        alt="Outdoor Sports Toy">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <small>
-                        OUTDOOR & SPORTS
-                    </small>
-
-                    <h3>
-                        Outdoor Sports Toy
-                    </h3>
-
-                    <div class="rating">
-                        ★★★★☆
-                        <span>4.6</span>
-                    </div>
-
-                    <div class="price">
-
-                        <del>
-                            ₹999
-                        </del>
-
-                        <strong>
-                            ₹649
-                        </strong>
-
-                        <span>
-                            35% OFF
-                        </span>
-
-                    </div>
-
-                    <button
-                        onclick="addToCart('Outdoor Sports Toy',649)">
-
-                        Add to Cart
-
-                    </button>
-
-                    <a
-                        href="javascript:void(0)"
-                        onclick="showProductMessage('Outdoor Sports Toy')">
-
-                        View Details
-
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </main>
-
-
-    <!-- ================= CART ================= -->
-
-    <section class="cart-section" id="cart">
-
-        <div class="section-heading">
-
-            <p>
-                YOUR SHOPPING BAG
-            </p>
-
-            <h2>
-                Shopping Cart
-            </h2>
-
-        </div>
-
-
-        <div id="cart-items">
-
-            <!-- Cart items will be added by JavaScript -->
-
-        </div>
-
-
-        <div class="cart-summary">
-
-            <h3>
-                Cart Total
-            </h3>
-
-            <strong id="cart-total">
-                ₹0
-            </strong>
-
-            <button onclick="checkout()">
-                Proceed to Checkout
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-logo">
-            B2K <span>TOYS</span>
-        </div>
-
-        <p>
-            © 2026 B2K Toys Store. All Rights Reserved.
+        <p class="result-count" id="result-count" aria-live="polite">
+          Loading products...
         </p>
 
-    </footer>
+        <div
+          class="product-grid"
+          id="all-products"
+          data-products
+        >
+          <p>Loading products...</p>
+        </div>
 
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+
+        <div>
+          <h2>Discover More Fun</h2>
+          <p>Find your next favourite toy at B2K Toys Store.</p>
+        </div>
+
+        <a href="categories.html" class="btn btn-primary">
+          Explore Categories →
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">B2K</span>
+            <span>Toys Store</span>
+          </a>
+
+          <p>
+            Discover toys, gifts and creative adventures for children
+            at B2K Toys Store.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="products.html">All Products</a>
+          <a href="categories.html">Categories</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Customer Care</h3>
+          <a href="contact.html">Contact Us</a>
+          <a href="cart.html">Shopping Cart</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="track-order.html">Track Order</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Popular Categories</h3>
+          <a href="products.html?category=Soft%20Toys">Soft Toys</a>
+          <a href="products.html?category=Vehicles">Toy Vehicles</a>
+          <a href="products.html?category=Educational%20Toys">Educational Toys</a>
+          <a href="products.html?category=Action%20Toys">Action Toys</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> B2K Toys Store.</p>
+        <p>All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
-
 </html>
+```
