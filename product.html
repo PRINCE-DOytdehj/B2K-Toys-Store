@@ -1,86 +1,146 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2K Toys | Product</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Product Details | B2K Toys Store</title>
+  <meta name="description" content="Explore toy details and shop your favourite toys at B2K Toys Store.">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="navbar">
+  <div class="announcement-bar">
+    Welcome to B2K Toys Store — Fun begins here!
+  </div>
 
-    <div class="logo">
-        <a href="index.html">B2K <span>TOYS</span></a>
-    </div>
+  <header class="site-header">
+    <div class="header-inner">
 
-    <nav class="nav-links">
+      <a href="index.html" class="logo" aria-label="B2K Toys Store Home">
+        <span class="logo-mark">B2K</span>
+        <span>B2K Toys Store</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" id="main-nav">
         <a href="index.html">Home</a>
+        <a href="products.html" aria-current="page">Products</a>
         <a href="categories.html">Categories</a>
-        <a href="products.html">Products</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="track-order.html">Track Order</a>
-        <a href="cart.html" class="cart-link">
-            Cart <span id="cart-count">0</span>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html" class="header-cart">
+          Cart <span class="cart-count" id="cart-count">0</span>
         </a>
-    </nav>
-
-</header>
-
-
-<main>
-
-    <section class="page-banner">
-        <p>B2K PRODUCT</p>
-        <h1>Product Details</h1>
-    </section>
-
-
-    <section class="product-detail">
-
-        <div id="product-detail-container">
-            <!-- JavaScript loads product -->
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer class="footer">
-
-    <div class="footer-grid">
-
-        <div>
-            <h2>B2K TOYS</h2>
-            <p>Fun starts here.</p>
-        </div>
-
-        <div>
-            <h3>Shop</h3>
-            <a href="products.html">Products</a>
-            <a href="categories.html">Categories</a>
-            <a href="cart.html">Cart</a>
-        </div>
-
-        <div>
-            <h3>Support</h3>
-            <a href="contact.html">Contact</a>
-            <a href="track-order.html">Track Order</a>
-        </div>
+      </div>
 
     </div>
+  </header>
 
-    <div class="footer-bottom">
-        <p>© 2026 B2K Toys Store. Demo E-Commerce Website.</p>
+  <main>
+    <section class="section">
+      <div class="container">
+
+        <div class="page-heading">
+          <p class="hero-tag">B2K TOYS STORE</p>
+          <h1>Product Details</h1>
+          <p>Discover your next favourite toy.</p>
+        </div>
+
+        <p>
+          <a href="index.html">Home</a>
+          &nbsp; / &nbsp;
+          <a href="products.html">Products</a>
+          &nbsp; / &nbsp;
+          Product Details
+        </p>
+
+        <!-- JavaScript loads the selected product here. -->
+        <div
+          id="product-details"
+          class="product-detail-layout"
+          aria-live="polite"
+        >
+          <div class="empty-state">
+            <h2>Loading product...</h2>
+            <p>Please wait while the product details load.</p>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <h2>You May Also Like</h2>
+          <p>Discover more toys from our collection.</p>
+        </div>
+
+        <div class="product-grid" id="featured-products" data-products></div>
+
+        <div style="text-align: center; margin-top: 32px;">
+          <a href="products.html" class="btn btn-primary">
+            Browse All Products
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">B2K</span>
+            <span>B2K Toys Store</span>
+          </a>
+
+          <p>
+            Bringing smiles, creativity, and fun to every child's playtime.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="categories.html">Categories</a>
+          <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Customer Support</h3>
+          <a href="contact.html">Contact Us</a>
+          <a href="cart.html">Shopping Cart</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="track-order.html">Track Order</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 B2K Toys Store. All rights reserved.</p>
+      </div>
+
     </div>
-
-</footer>
-
-
-<script src="script.js"></script>
+  </footer>
 
 </body>
 </html>
+```
