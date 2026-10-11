@@ -1,169 +1,180 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2K Toys | Track Order</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Track Your Order | B2K Toys Store</title>
+  <meta name="description" content="Check your demo order status at B2K Toys Store.">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<header class="navbar">
+  <div class="announcement-bar">
+    Welcome to B2K Toys Store — Fun begins here!
+  </div>
 
-    <div class="logo">
-        <a href="index.html">B2K <span>TOYS</span></a>
-    </div>
+  <header class="site-header">
+    <div class="header-inner">
 
-    <nav class="nav-links">
+      <a href="index.html" class="logo" aria-label="B2K Toys Store Home">
+        <span class="logo-mark">B2K</span>
+        <span>B2K Toys Store</span>
+      </a>
 
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" id="main-nav">
         <a href="index.html">Home</a>
-        <a href="categories.html">Categories</a>
         <a href="products.html">Products</a>
+        <a href="categories.html">Categories</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="track-order.html" class="active">
-            Track Order
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html" class="header-cart">
+          Cart <span class="cart-count" id="cart-count">0</span>
         </a>
+      </div>
 
-        <a href="cart.html" class="cart-link">
-            Cart <span id="cart-count">0</span>
-        </a>
+    </div>
+  </header>
 
-    </nav>
+  <main>
 
-</header>
+    <section class="section">
+      <div class="container">
 
+        <div class="page-heading">
+          <p class="hero-tag">ORDER INFORMATION</p>
+          <h1>Track Your Order</h1>
+          <p>Enter your order ID to check its demo status.</p>
+        </div>
 
-<main>
+        <div class="tracking-card">
 
-    <section class="page-banner">
+          <div class="category-icon">📦</div>
 
-        <p>ORDER SUPPORT</p>
+          <h2>Where Is My Order?</h2>
 
-        <h1>Track Your Order</h1>
+          <p>
+            Enter the order ID you received when placing a demo order.
+          </p>
 
-        <span>
-            Enter your demo order number below.
-        </span>
+          <form id="tracking-form" data-tracking-form>
 
-    </section>
+            <div class="form-group">
+              <label for="order-id">Order ID</label>
 
-
-    <section class="form-section">
-
-        <div class="track-box">
-
-            <h2>
-                Order Tracking
-            </h2>
-
-            <br>
-
-            <form onsubmit="trackOrder(event)">
-
-                <div class="form-group">
-
-                    <label>
-                        Order Number
-                    </label>
-
-                    <input
-                        type="text"
-                        id="tracking-number"
-                        placeholder="Example: B2K123456"
-                        required>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="form-submit">
-
-                    TRACK ORDER
-
-                </button>
-
-            </form>
-
-
-            <div
-                id="track-result"
-                class="track-result">
-
-                <p>
-                    <strong>
-                        Order:
-                    </strong>
-
-                    <span id="tracked-number"></span>
-                </p>
-
-
-                <div class="status-line">
-                    ✓ Order Confirmed
-                </div>
-
-
-                <div class="status-line">
-                    ✓ Processing
-                </div>
-
-
-                <div class="status-line">
-                    ✓ Ready for Dispatch
-                </div>
-
-
-                <div class="status-line">
-                    → Demo Delivery Status
-                </div>
-
+              <input
+                type="text"
+                id="order-id"
+                name="orderId"
+                placeholder="Example: B2K123456"
+                autocomplete="off"
+                required
+              >
             </div>
 
+            <button type="submit" class="btn btn-primary">
+              Track Order
+            </button>
+
+          </form>
+
+          <div
+            id="tracking-result"
+            data-tracking-result
+            aria-live="polite"
+            style="margin-top: 24px;"
+          ></div>
+
+          <p class="notice">
+            This is a demo tracking system. It can only find orders saved in
+            the same browser where the order was placed. It does not connect
+            to a real courier or delivery company.
+          </p>
+
         </div>
 
+      </div>
     </section>
 
-</main>
+    <section class="section section-light">
+      <div class="container">
 
+        <div class="section-heading">
+          <h2>Need Assistance?</h2>
+          <p>We're happy to help you explore our demo store.</p>
 
-<footer class="footer">
+          <a href="contact.html" class="btn btn-secondary">
+            Contact Us
+          </a>
 
-    <div class="footer-grid">
-
-        <div>
-            <h2>B2K TOYS</h2>
-            <p>Fun starts here.</p>
+          <a href="products.html" class="btn btn-primary">
+            Continue Shopping
+          </a>
         </div>
 
-        <div>
-            <h3>Shop</h3>
-            <a href="products.html">Products</a>
-            <a href="categories.html">Categories</a>
-            <a href="cart.html">Cart</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-mark">B2K</span>
+            <span>B2K Toys Store</span>
+          </a>
+
+          <p>
+            Bringing smiles, creativity, and fun to every child's playtime.
+          </p>
         </div>
 
-        <div>
-            <h3>Support</h3>
-            <a href="contact.html">Contact</a>
-            <a href="track-order.html">Track Order</a>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="categories.html">Categories</a>
+          <a href="about.html">About Us</a>
         </div>
+
+        <div class="footer-column">
+          <h3>Customer Support</h3>
+          <a href="contact.html">Contact Us</a>
+          <a href="cart.html">Shopping Cart</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="track-order.html">Track Order</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 B2K Toys Store. All rights reserved.</p>
+      </div>
 
     </div>
-
-    <div class="footer-bottom">
-        <p>
-            © 2026 B2K Toys Store.
-            Demo E-Commerce Website.
-        </p>
-    </div>
-
-</footer>
-
-
-<script src="script.js"></script>
+  </footer>
 
 </body>
 </html>
+```
